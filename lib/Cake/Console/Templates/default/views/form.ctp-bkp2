@@ -1,0 +1,72 @@
+<?php echo "<?php \$this->extend('/Common/".$action."') ?>"; ?>
+
+<?php echo "<?php \$this->assign('title', '$modelClass'); ?>"; ?>
+
+<?php echo "<?php \$this->start('contents'); ?>"; ?>
+
+<?php echo "<?php echo \$this->Form->create('{$modelClass}', array('enctype' => 'multipart/form-data')); ?>\n"; ?>
+
+	<?php
+		echo "<?php ";
+		echo "\n\t\$this->Form->inputDefaults(
+		array(
+			//'label' => false,
+			'class' => 'span12',
+		));";
+		echo "\n\t\$fields = array(";
+			echo "\n\t\t'$pluralVar'=>array(";
+				foreach ($fields as $field) {
+					if (strpos($action, 'add') !== false && $field == $primaryKey) {
+						continue;
+					} elseif (!in_array($field, array('created', 'modified', 'updated'))) {
+						echo "\n\t\t\t'$field'=> array(\n\t\t\t\t'label'=>'$field'\n\t\t\t),";
+					}
+				}
+				if (!empty($associations['hasAndBelongsToMany'])) {
+					foreach ($associations['hasAndBelongsToMany'] as $assocName => $assocData) {
+						echo "\n\t\t\t'$assocName'=> array(\n\t\t\t\t'class'=>'span12'\n\t\t\t),";
+					}
+				}
+		echo "\n\t\t),";
+		echo "\n\t);";
+		echo "\n\t\techo \$this->Table->tabinput(\$fields);";
+		echo "\n?>";
+?>
+
+<div class="row-fluid">
+	<div class="form-actions">
+		<button type="submit" class="btn btn-info"><?php echo __('Save'); ?></button>
+		<?php 
+		echo "<?php ";
+		echo "
+		echo \$this->Html->link('Cancel',
+			array('action'=>'index'),
+			array('class'=>'btn btn-warning')
+		);";
+		echo "\n?>";
+		?>
+	</div>	
+</div>
+
+<?php echo "<?php \$this->start('box'); ?>"; ?>
+
+	<?php 
+		$done = array();
+		foreach ($associations as $type => $data) {
+			foreach ($data as $alias => $details) {
+				if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
+					echo "
+					<?php echo \$this->Link->icon('".Inflector::humanize($details['controller'])."', 
+						null,
+						array('controller' => '{$details['controller']}', 'action' => 'index'),
+						array('class'=> 'btn btn-block')
+					); ?>";
+					$done[] = $details['controller'];
+				}
+			}
+		}
+	?>
+
+<?php echo "<?php \$this->end(); ?>"; ?>
+
+<?php echo "\n\n<?php \$this->end(); ?>"; ?>

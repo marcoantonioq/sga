@@ -1,0 +1,77 @@
+<?php echo '<?php $this->extend(\'/Common/index\') ?>'; ?>
+
+<?php echo '<?php $this->assign(\'title\', \''.$modelClass.'\'); ?>'; ?>
+
+
+<?php echo '<?php $this->start(\'contents\'); ?>'; ?>
+
+<?php 
+	echo '<?php';
+		echo "\n\t".'$displayFields = array(';
+		foreach ($fields as $field) {
+			$isKey = false;
+			if (!empty($associations['belongsTo'])) {
+				foreach ($associations['belongsTo'] as $alias => $details) {
+					if ($field === $details['foreignKey']) {
+						$isKey = true;
+						echo "\n\t\t'$alias'=>'$alias.id',";
+						break;
+					}
+				}
+			}
+			if ($isKey !== true) {
+				echo "\n\t\t'$field'=>'$modelClass.$field',";
+			}
+		}
+		echo "\n\t".');';
+			 
+		echo "\n\t".'echo $this->Table->createTableForm(
+			"'.$modelClass.'",
+			$'.$pluralVar.',
+			$displayFields
+		);
+	?>';
+?>
+
+<?php echo '<?php $this->end(); ?>'; ?>
+
+<?php 
+	echo "\n<?php \$this->start('box'); ?>";
+	$done = array();
+	foreach ($associations as $type => $data) {
+	foreach ($data as $alias => $details) {
+	if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
+		echo "\n
+		<?php 
+		echo \$this->Link->icon('" . Inflector::humanize($details['controller']) . "', 
+			'bended_arrow_left',
+			array('controller' => '{$details['controller']}', 'action' => 'index'),
+			array('class'=> 'btn btn-block')
+		);
+		?>\n";					
+		$done[] = $details['controller'];
+	}
+	}
+	}
+	echo "\n\n<?php \$this->end(); ?>";
+
+ ?>
+
+
+<?php 
+echo "<?php echo \$this->start('filter'); ?>
+
+	<?php echo \$this->Form->input('type', array(
+		'label'=>false,
+		'div'=>'span3',
+        'options' => array(";
+        	foreach ($fields as $field) {
+				echo "\n\t\t\t'$modelClass.$field'=>'$field',";
+			}
+		echo "\n\t\t),
+        /*'empty' => 'Type',*/
+    )); ?>
+
+<?php echo \$this->end(); ?>";
+
+ ?>
