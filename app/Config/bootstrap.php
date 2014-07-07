@@ -74,25 +74,6 @@ Cache::config('default', array('engine' => 'File'));
 
 date_default_timezone_set('America/Sao_Paulo');
 
-CakePlugin::load('AclExtras');
-CakePlugin::load(array('CakePdf' => array(
-    'bootstrap' => true, 
-    'routes' => true
-)));
-
-Configure::write('CakePdf', array(
-    'engine' => 'CakePdf.DomPdf',
-    'margin' => array(
-        'bottom' => 0,
-        'left' => 0,
-        'right' => 0,
-        'top' => 0
-    ),
-    'pageSize' => 'A4',
-    'orientation' => 'landscape',    
-    'download' => false
-));
-
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter. By default CakePHP bundles two filters:
  *
