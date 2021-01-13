@@ -1,41 +1,9 @@
-CakePHP
-=======
 
-[![CakePHP](http://cakephp.org/img/cake-logo.png)](http://www.cakephp.org)
+# Monografia apresentada como requisito para obtenção de título
+## Sistema de gerenciamento rural para bovinos de leite
+Este trabalho tem como objetivo o desenvolvimento de uma solução web, implementada em linguagem de programação PHP, para produtores e gestores rurais, visando apoiar o gestor e sua equipe, com indicadores e informações atualizadas de uma produção ou cultura. Esta ferramenta contém módulos que fazem projeção de relatórios, receituários (medicamentos), controle de negócio como compras, vendas, trocas, lançamentos de custos além disso registro de ocorrências de manejo, cadastro de clientes, fornecedores, produtos, pessoal e que facilite no planejamento e controle das atividades administrativas e tomadas de decisões. Para o desenvolvimento deste trabalho foi utilizado embasamento bibliográfico na área de agronegócio e para viabilização desta ferramenta, foram desenvolvidas análise da produção de leite, visitas in loco e os conhecimentos adquiridos no Curso de Tecnologia em Análise e Desenvolvimento de Sistemas. Os requisitos do programa teve como principal forma de levantamento, a refatoração das ferramentas já existentes, assim como o manejo e a produção de leite no Instituto Federal de Educação, Ciência e Tecnologia de Urutaí. Realizada essa análise, foi feita a descrição do sistema e iniciou-se a modelagem da aplicação. Utilizou-se a Análise e Projeto de Sistema com UML (Unifield Modeling Language).
 
-CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.
-Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
-
-Some Handy Links
-----------------
-
-[CakePHP](http://www.cakephp.org) - The rapid development PHP framework
-
-[CookBook](http://book.cakephp.org) - THE CakePHP user documentation; start learning here!
-
-[API](http://api.cakephp.org) - A reference to CakePHP's classes
-
-[Plugins](http://plugins.cakephp.org/) - A repository of extensions to the framework
-
-[The Bakery](http://bakery.cakephp.org) - Tips, tutorials and articles
-
-[Community Center](http://community.cakephp.org) - A source for everything community related
-
-[Training](http://training.cakephp.org) - Join a live session and get skilled with the framework
-
-[CakeFest](http://cakefest.org) - Don't miss our annual CakePHP conference
-
-[Cake Software Foundation](http://cakefoundation.org) - Promoting development related to CakePHP
-
-Get Support!
-------------
-
-[#cakephp](http://webchat.freenode.net/?channels=#cakephp) on irc.freenode.net - Come chat with us, we have cake
-
-[Google Group](https://groups.google.com/group/cake-php) - Community mailing list and forum
-
-[GitHub Issues](https://github.com/cakephp/cakephp/issues) - Got issues? Please tell us!
-
-[![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](http://travis-ci.org/cakephp/cakephp)
-
-![Cake Power](https://raw.github.com/cakephp/cakephp/master/lib/Cake/Console/Templates/skel/webroot/img/cake.power.gif)
+## Trabalho completo
+[
+![TCC](https://raw.githubusercontent.com/marcoantonioq/sga/master/demo/sistema_rural.png)
+](https://www.dropbox.com/s/movc6i2fzq4zq1t/monografia-final.pdf?dl=0)
