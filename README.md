@@ -5,5 +5,5 @@ Este trabalho tem como objetivo o desenvolvimento de uma solução web, implemen
 
 ## Trabalho completo
 [
-![TCC](https://raw.githubusercontent.com/marcoantonioq/sga/master/demo/sistema_rural.png)
+![TCC](https://raw.githubusercontent.com/marcoantonioq/sistema-gestao-rural/master/demo/sistema_rural.png)
 ](https://www.dropbox.com/s/movc6i2fzq4zq1t/monografia-final.pdf?dl=0)
